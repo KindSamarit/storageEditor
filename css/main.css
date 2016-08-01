@@ -88,4 +88,14 @@ body {
     font-size: 20px;
     right: 20px;
     top: 15px;
+    display: none;
 }
+
+.visible_icon {
+    display: block;
+}
+
+.invisible_icon {
+    display: none;
+}
+

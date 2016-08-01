@@ -1,11 +1,11 @@
 // Работа с localStorage
+(function() {
+    var Driver = {
+        loadItem: function () {
 
-var Driver = {
-    loadItem: function() {
+        },
+        saveItems: function () {
 
-    },
-    saveItems: function() {
-
-    }
-};
-
+        }
+    };
+}());

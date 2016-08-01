@@ -29,6 +29,22 @@
         icon.onclick = function() {
             this.parentNode.style.display = "none";
         };
+        post.onmouseover = function(event) {
+            var target = event.target;
+            if (icon.classList.contains("invisible_icon")) {
+                icon.classList.remove("invisible_icon");
+            } else {
+                icon.classList.add("visible_icon");
+            }
+        };
+        post.onmouseout = function(event) {
+            var target = event.target;
+            if (icon.classList.contains("visible_icon")) {
+                icon.classList.remove("visible_icon");
+            } else {
+                icon.classList.add("invisible_icon");
+            }
+        };
         post.appendChild(icon);
         storage = storage || input.value;
         post.appendChild(document.createTextNode(storage));
@@ -52,6 +68,4 @@
     }
 
 
-
-    console.log(Driver);
 }());
