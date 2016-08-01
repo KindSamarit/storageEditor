@@ -83,13 +83,25 @@ body {
     position: relative;
 }
 
+.post:hover .icon{
+    opacity: 1;
+}
+
 .icon {
     position: absolute;
     font-size: 20px;
     right: 20px;
     top: 15px;
-    display: none;
+    opacity: 0;
+    -webkit-transition: opacity  0.3s linear;
+    -moz-transition: opacity  0.3s linear;
+    -ms-transition: opacity  0.3s linear;
+    -o-transition: opacity  0.3s linear;
+    transition: opacity  0.3s linear;
+    cursor: pointer;
 }
+
+
 
 .visible_icon {
     display: block;
