@@ -58,7 +58,7 @@
     }
 
     createButton.addEventListener("click", createPost);
-    window.addEventListener("load", getPost);
+    getPost();
 
     function getPost() {
         var arrStorage = JSON.parse(localStorage.getItem("to-do"));
