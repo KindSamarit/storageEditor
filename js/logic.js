@@ -23,15 +23,17 @@
 
     function workAtButton(storage) {
         var post = document.createElement("div");
-        var text = document.createTextNode(input.value);
         var icon = document.createElement("span");
         post.className = "post";
         icon.className = "glyphicon glyphicon-remove-sign icon";
+        icon.onclick = function() {
+            this.parentNode.style.display = "none";
+        };
         post.appendChild(icon);
-        post.appendChild(text);
+        storage = storage || input.value;
+        post.appendChild(document.createTextNode(storage));
         content_text.appendChild(post);
-        posts.push(text.data);
-        removePost();
+        posts.push(storage);
     }
 
     function createPost() {
@@ -45,25 +47,11 @@
     function getPost() {
         var arrStorage = JSON.parse(localStorage.getItem("to-do"));
         for (var i = 0; i < arrStorage.length; i++) {
-            var newPost = document.createElement("div");
-            var newText = document.createTextNode(arrStorage[i])
-            newPost.className = "post";
-            var newIcon = document.createElement("span");
-            newIcon.className = "glyphicon glyphicon-remove-sign icon";
-            newPost.appendChild(newIcon);
-            newPost.appendChild(newText);
-            content_text.appendChild(newPost);
-            removePost();
+            workAtButton(arrStorage[i]);
         }
     }
 
 
-    function removePost() {
-        for (var x = 0; x < icon.length; x++) {
-            icon[x].onclick = function() {
-                this.parentNode.style.display = "none";
-            };
-        }
-    }
 
+    console.log(Driver);
 }());
