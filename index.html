@@ -14,22 +14,21 @@
 </head>
 <body>
 
-        <div id="box_app">
-            <div id="title_app">LocalStorage Editor<span id="pencil" class="glyphicon glyphicon-pencil"></span></div>
-            <div id="content_app">
-                <div id="form_panel">
+        <div class="box_app">
+            <div class="title_app">LocalStorage Editor<span class="pencil" class="glyphicon glyphicon-pencil"></span></div>
+            <div class="content_app">
+                <div class="form_panel">
                     <form>
-                        <input type="text"  class="form-control" placeholder="Writing...">
+                        <input type="text"  class="form-control" id="writing_input" placeholder="Writing...">
                     </form>
                 </div>
-                <button type="submit" class="btn btn-default create">Create</button>
-                <div id="content_text"></div>
+                <button type="submit" id="create" class="btn btn-default">Create</button>
+                <div class="content_text"></div>
             </div>
         </div>
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
 <script src="js/logic.js"></script>
-<script src="js/bootstrap.min.js"></script>
 </body>
 </html>
