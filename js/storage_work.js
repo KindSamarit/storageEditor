@@ -3,13 +3,15 @@
     var Driver = {
         loadItem: function () {
             if (arrStorage) {
-                var stor = localStorage.getItem("to-do");
                 if (stor === "") {
-                    return false;
+                    return [];
                 } else {
                     var arrStorage = JSON.parse(stor);
                     return arrStorage;
                 }
+                var arrStorage = JSON.parse(localStorage.getItem("to-do"));
+                var store = localStorage.getItem("to-do");
+                return arrStorage;
             }
         },
         saveItems: function (posts) {
