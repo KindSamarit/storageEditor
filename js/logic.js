@@ -1,17 +1,20 @@
 (function() {
     "use strict";
-
-    function constructInterface(environment, prefix) {
-        content = document.getElementById("content_app");
-        input = document.getElementById("writing_input");
-        createButton = document.getElementById("create");
-        content_text = document.getElementById("content_text");
-        posts = []; // Массив постов
-        icon = document.getElementsByClassName("icon");
-        createButton.addEventListener("click", createPost);
-        this.getPost = constructInterface.prototype.getPost;
-        this.createPost = constructInterface.prototype.createPost;
-        this.workAtButton = constructInterface.prototype.workAtButton;
+    function constructInterface() {
+        var content,
+        input,
+        createButton,
+        content_text,
+        posts,
+        icon;
+        this.content =  document.getElementById("content_app");
+        this.input = document.getElementById("writing_input");
+        this.createButton = document.getElementById("create");
+        this.content_text = document.getElementById("content_text");
+        this.posts = []; // Массив постов
+        this.icon = document.getElementsByClassName("icon");
+        getPost();
+        this.createButton.addEventListener("click", createPost);
     }
 
     constructInterface.prototype.getPost = getPost;
@@ -20,12 +23,7 @@
 
     // Объявление переменных
 
-    var content,
-        input,
-        createButton,
-        content_text,
-        posts,
-        icon;
+
 
     // Инициализация
 
@@ -42,7 +40,7 @@
             this.parentNode.style.display = "none";
         };
         post.appendChild(icon);
-        storage = storage || input.value;
+        storage = storage || this.input.value;
         post.appendChild(document.createTextNode(storage));
         content_text.appendChild(post);
         posts.push(storage);
@@ -52,7 +50,7 @@
 
     function createPost() {
         workAtButton();
-        driver.saveItems(posts);
+        driver.saveItems(this.posts);
     }
 
         //getPost();
@@ -64,14 +62,7 @@
         }
     }
 
-
-
-
-
-    console.log(constructInterface.prototype);
-
     var test = new constructInterface();
     test.getPost();
-
 
 }());
