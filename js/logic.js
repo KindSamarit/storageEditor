@@ -36,20 +36,22 @@
         posts.push(storage);
     }
 
-    function createPost() {
-        workAtButton();
-        localStorage.setItem("to-do", JSON.stringify(posts));
-    }
+    window.sbutton = workAtButton;
+    window.pans = posts;
 
-    createButton.addEventListener("click", createPost);
-    getPost();
+    window.onload = function() {
+        function createPost() {
+            workAtButton();
+            driver.saveItems();
 
-    function getPost() {
-        var arrStorage = JSON.parse(localStorage.getItem("to-do"));
-        for (var i = 0; i < arrStorage.length; i++) {
-            workAtButton(arrStorage[i]);
         }
-    }
 
+        createButton.addEventListener("click", createPost);
+        getPost();
+
+        function getPost() {
+            driver.loadItem();
+        }
+    };
 
 }());
