@@ -15,9 +15,9 @@
     content = document.getElementById("content_app");
     input = document.getElementById("writing_input");
     createButton = document.getElementById("create");
-    content_text = document.getElementsByClassName("content_text")[0];
+    content_text = document.getElementById("content_text");
     posts = []; // Массив постов
-    icon = document.getElementsByClassName("icon");
+    icon = document.getElementById("icon");
 
     // Объявление функций
 
@@ -25,6 +25,7 @@
         var post = document.createElement("div");
         var icon = document.createElement("span");
         post.className = "post";
+        post.id = "post";
         icon.className = "glyphicon glyphicon-remove-sign icon";
         icon.onclick = function() {
             this.parentNode.style.display = "none";
@@ -44,7 +45,6 @@
     }
 
         createButton.addEventListener("click", createPost);
-        getPost();
 
     function getPost() {
         var arr = driver.loadItem();
@@ -54,7 +54,7 @@
     }
 
 
-    function constructInterface() {
+    function constructInterface(environment, prefix) {
 
     }
 
@@ -64,6 +64,6 @@
     console.log(constructInterface.prototype);
 
     var test = new constructInterface();
-
+    test.getPost();
 
 }());
