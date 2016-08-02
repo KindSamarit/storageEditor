@@ -8,6 +8,7 @@
         this.posts = []; // Массив постов
         this.icon = document.getElementsByClassName("icon");
         this.createButton.addEventListener("click", createPost);
+        this.getPost();
     }
 
     constructInterface.prototype.getPost = getPost;
