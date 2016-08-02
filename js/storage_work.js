@@ -3,12 +3,10 @@
     var Driver = {
         loadItem: function () {
             var arrStorage = JSON.parse(localStorage.getItem("to-do"));
-            for (var i = 0; i < arrStorage.length; i++) {
-               sbutton(arrStorage[i]);
-            }
+            return arrStorage;
         },
-        saveItems: function () {
-            localStorage.setItem("to-do", JSON.stringify(pans));
+        saveItems: function (posts) {
+            localStorage.setItem("to-do", JSON.stringify(posts));
         }
     };
     window.driver = Driver;

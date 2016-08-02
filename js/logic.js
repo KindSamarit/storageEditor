@@ -12,7 +12,7 @@
 
     // Инициализация
 
-    content = document.getElementsByClassName("content_app")[0];
+    content = document.getElementById("content_app");
     input = document.getElementById("writing_input");
     createButton = document.getElementById("create");
     content_text = document.getElementsByClassName("content_text")[0];
@@ -36,22 +36,34 @@
         posts.push(storage);
     }
 
-    window.sbutton = workAtButton;
-    window.pans = posts;
 
-    window.onload = function() {
-        function createPost() {
-            workAtButton();
-            driver.saveItems();
 
-        }
+    function createPost() {
+        workAtButton();
+        driver.saveItems(posts);
+    }
 
         createButton.addEventListener("click", createPost);
         getPost();
 
-        function getPost() {
-            driver.loadItem();
+    function getPost() {
+        var arr = driver.loadItem();
+        for (var i = 0; i < arr.length; i++) {
+            workAtButton(arr[i]);
         }
-    };
+    }
+
+
+    function constructInterface() {
+
+    }
+
+    constructInterface.prototype.getPost = getPost;
+    constructInterface.prototype.createPost = createPost;
+    constructInterface.prototype.workAtButton = workAtButton;
+    console.log(constructInterface.prototype);
+
+    var test = new constructInterface();
+
 
 }());
