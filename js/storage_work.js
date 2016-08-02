@@ -3,10 +3,13 @@
     var Driver = {
         loadItem: function () {
             if (arrStorage) {
-                var arrStorage = JSON.parse(localStorage.getItem("to-do"));
-                return arrStorage;
-            } else {
-                return false;
+                var stor = localStorage.getItem("to-do");
+                if (stor === "") {
+                    return false;
+                } else {
+                    var arrStorage = JSON.parse(stor);
+                    return arrStorage;
+                }
             }
         },
         saveItems: function (posts) {
@@ -14,4 +17,5 @@
         }
     };
     window.driver = Driver;
+    console.log();
 }());
