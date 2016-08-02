@@ -11,21 +11,17 @@
         this.getPost();
     }
 
-    constructInterface.prototype.getPost = getPost;
-    constructInterface.prototype.createPost = createPost;
-    constructInterface.prototype.workAtButton = workAtButton;
-
-    // Объявление переменных
-
-
-
-    // Инициализация
-
-
-
-    // Объявление функций
-
-    function workAtButton(storage) {
+    constructInterface.prototype.getPost = function() {
+        var arr = driver.loadItem();
+        for (var i = 0; i < arr.length; i++) {
+            workAtButton(arr[i]);
+        }
+    };
+    constructInterface.prototype.createPost = function() {
+        workAtButton();
+        driver.saveItems(this.posts);
+    };
+    constructInterface.prototype.workAtButton = function(storage) {
         var post = document.createElement("div");
         var icon = document.createElement("span");
         post.className = "post";
@@ -38,22 +34,32 @@
         post.appendChild(document.createTextNode(storage));
         this.content_text.appendChild(post);
         this.posts.push(storage);
+    };
+
+    // Объявление переменных
+
+
+
+    // Инициализация
+
+
+
+    // Объявление функций
+
+    function workAtButton(storage) {
+
     }
 
 
 
     function createPost() {
-        workAtButton();
-        driver.saveItems(this.posts);
+
     }
 
         //getPost();
 
     function getPost() {
-        var arr = driver.loadItem();
-        for (var i = 0; i < arr.length; i++) {
-            workAtButton(arr[i]);
-        }
+
     }
 
     var test = new constructInterface();
