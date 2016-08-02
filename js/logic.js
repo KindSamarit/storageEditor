@@ -1,6 +1,23 @@
 (function() {
     "use strict";
 
+    function constructInterface(environment, prefix) {
+        content = document.getElementById("content_app");
+        input = document.getElementById("writing_input");
+        createButton = document.getElementById("create");
+        content_text = document.getElementById("content_text");
+        posts = []; // Массив постов
+        icon = document.getElementsByClassName("icon");
+        createButton.addEventListener("click", createPost);
+        this.getPost = constructInterface.prototype.getPost;
+        this.createPost = constructInterface.prototype.createPost;
+        this.workAtButton = constructInterface.prototype.workAtButton;
+    }
+
+    constructInterface.prototype.getPost = getPost;
+    constructInterface.prototype.createPost = createPost;
+    constructInterface.prototype.workAtButton = workAtButton;
+
     // Объявление переменных
 
     var content,
@@ -12,12 +29,7 @@
 
     // Инициализация
 
-    content = document.getElementById("content_app");
-    input = document.getElementById("writing_input");
-    createButton = document.getElementById("create");
-    content_text = document.getElementById("content_text");
-    posts = []; // Массив постов
-    icon = document.getElementById("icon");
+
 
     // Объявление функций
 
@@ -25,7 +37,6 @@
         var post = document.createElement("div");
         var icon = document.createElement("span");
         post.className = "post";
-        post.id = "post";
         icon.className = "glyphicon glyphicon-remove-sign icon";
         icon.onclick = function() {
             this.parentNode.style.display = "none";
@@ -44,7 +55,7 @@
         driver.saveItems(posts);
     }
 
-        createButton.addEventListener("click", createPost);
+        //getPost();
 
     function getPost() {
         var arr = driver.loadItem();
@@ -54,16 +65,13 @@
     }
 
 
-    function constructInterface(environment, prefix) {
 
-    }
 
-    constructInterface.prototype.getPost = getPost;
-    constructInterface.prototype.createPost = createPost;
-    constructInterface.prototype.workAtButton = workAtButton;
+
     console.log(constructInterface.prototype);
 
     var test = new constructInterface();
     test.getPost();
+
 
 }());
