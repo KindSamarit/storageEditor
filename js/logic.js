@@ -37,4 +37,5 @@
     };
 
     var test = new constructInterface(document.getElementById("content_app"));
+    var test2 = new constructInterface(document.querySelector(".content_appr"));
 }());
