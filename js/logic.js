@@ -12,6 +12,7 @@
     }
 
     constructInterface.prototype.getPost = function() {
+        console.log(arr);
         var arr = driver.loadItem();
         for (var i = 0; i < arr.length; i++) {
             workAtButton(arr[i]);

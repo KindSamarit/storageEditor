@@ -2,15 +2,11 @@
 (function() {
     var Driver = {
         loadItem: function () {
-            if (arrStorage) {
-                if (stor === "") {
-                    return [];
-                } else {
-                    var arrStorage = JSON.parse(stor);
-                    return arrStorage;
-                }
-                var arrStorage = JSON.parse(localStorage.getItem("to-do"));
-                var store = localStorage.getItem("to-do");
+            var stor = localStorage.getItem("to-do");
+            if (stor === "") {
+                return [];
+            } else {
+                var arrStorage = JSON.parse(stor);
                 return arrStorage;
             }
         },
