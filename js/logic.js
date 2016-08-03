@@ -19,7 +19,7 @@
     };
     constructInterface.prototype.createPost = function() {
         this.workAtButton();
-        driver.saveItems(this.posts);
+        driver.saveItems(this.posts, "to-do");
     };
     constructInterface.prototype.workAtButton = function(storage) {
         var post = document.createElement("div");

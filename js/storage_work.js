@@ -9,8 +9,8 @@
                 return JSON.parse(stor);
             }
         },
-        saveItems: function (prefix) {
-            localStorage.setItem(prefix, JSON.stringify(this.posts));
+        saveItems: function (posts, prefix) {
+            localStorage.setItem(prefix, JSON.stringify(posts));
         }
     };
     window.driver = Driver;
