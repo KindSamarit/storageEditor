@@ -10,7 +10,7 @@
             }
         },
         saveItems: function (posts, prefix) {
-            localStorage.setItem(prefix, JSON.stringify(posts));
+            localStorage.setItem(this.prefix, JSON.stringify(posts));
         }
     };
     window.driver = Driver;
