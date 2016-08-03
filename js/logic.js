@@ -1,16 +1,13 @@
 (function() {
     "use strict";
-    function constructInterface() {
-        var self = this;
-        this.content =  document.getElementById("content_app");
-        this.input = document.getElementById("writing_input");
-        this.createButton = document.getElementById("create");
-        this.content_text = document.getElementById("content_text");
+    function constructInterface(cnt) {
+        this.content =  cnt;
+        this.input = this.content.getElementsByClassName("form-control")[0];
+        this.createButton = this.content.getElementsByClassName("create")[0];
+        this.content_text = this.content.getElementsByClassName("content_text")[0];
         this.posts = []; // Массив постов
-        this.icon = document.getElementsByClassName("icon");
-        this.createButton.addEventListener("click", function () {
-            self.createPost()
-        });
+        this.icon = this.content.getElementsByClassName("icon");
+        this.createButton.addEventListener("click", this.createPost.bind(this));
         this.getPost();
     }
 
@@ -39,5 +36,5 @@
         this.posts.push(storage);
     };
 
-    var test = new constructInterface();
+    var test = new constructInterface(document.getElementById("content_app"));
 }());
