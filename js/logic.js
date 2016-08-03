@@ -37,6 +37,5 @@
         this.posts.push(storage);
     };
 
-    var test = new constructInterface(document.getElementById("content_app_left"), "to-do");
-    var test2 = new constructInterface(document.getElementById("content_app_right"), "do-to");
+    window.constructInterface = constructInterface;
 }());
