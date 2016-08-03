@@ -1,16 +1,16 @@
 // Работа с localStorage
 (function() {
     var Driver = {
-        loadItem: function () {
-            var stor = localStorage.getItem("to-do");
+        loadItem: function (prefix) {
+            var stor = localStorage.getItem(prefix);
             if (stor === "") {
                 return [];
             } else {
                 return JSON.parse(stor);
             }
         },
-        saveItems: function (posts) {
-            localStorage.setItem("to-do", JSON.stringify(posts));
+        saveItems: function (prefix) {
+            localStorage.setItem(prefix, JSON.stringify(this.posts));
         }
     };
     window.driver = Driver;

@@ -1,6 +1,6 @@
 (function() {
     "use strict";
-    function constructInterface(cnt) {
+    function constructInterface(cnt, prefix) {
         this.content =  cnt;
         this.input = this.content.querySelector(".form-control");
         this.createButton = this.content.querySelector(".create");
@@ -12,7 +12,7 @@
     }
 
     constructInterface.prototype.getPost = function() {
-        var arr = driver.loadItem();
+        var arr = driver.loadItem("to-do");
         for (var i = 0; i < arr.length; i++) {
             this.workAtButton(arr[i]);
         }
@@ -36,6 +36,6 @@
         this.posts.push(storage);
     };
 
-    var test = new constructInterface(document.getElementById("content_app"));
-    var test2 = new constructInterface(document.querySelector(".content_appr"));
+    var test = new constructInterface(document.getElementById("content_app_left"), "to-do");
+    var test2 = new constructInterface(document.getElementById("content_app_right"), "right");
 }());
