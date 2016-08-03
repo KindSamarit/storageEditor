@@ -2,11 +2,11 @@
     "use strict";
     function constructInterface(cnt) {
         this.content =  cnt;
-        this.input = this.content.getElementsByClassName("form-control")[0];
-        this.createButton = this.content.getElementsByClassName("create")[0];
-        this.content_text = this.content.getElementsByClassName("content_text")[0];
+        this.input = this.content.querySelector(".form-control");
+        this.createButton = this.content.querySelector(".create");
+        this.content_text = this.content.querySelector(".content_text");
         this.posts = []; // Массив постов
-        this.icon = this.content.getElementsByClassName("icon");
+        this.icon = this.content.querySelector(".icon");
         this.createButton.addEventListener("click", this.createPost.bind(this));
         this.getPost();
     }
