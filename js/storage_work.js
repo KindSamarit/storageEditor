@@ -3,10 +3,10 @@
     var Driver = {
         loadItem: function (prefix) {
             var stor = localStorage.getItem(prefix);
-            if (stor === "") {
-                return [];
-            } else {
+            if (stor) {
                 return JSON.parse(stor);
+            } else {
+                return [];
             }
         },
         saveItems: function (posts, prefix) {
