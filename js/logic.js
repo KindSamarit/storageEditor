@@ -1,24 +1,27 @@
 (function() {
     "use strict";
     function constructInterface() {
+        var self = this;
         this.content =  document.getElementById("content_app");
         this.input = document.getElementById("writing_input");
         this.createButton = document.getElementById("create");
         this.content_text = document.getElementById("content_text");
         this.posts = []; // Массив постов
         this.icon = document.getElementsByClassName("icon");
-        this.createButton.addEventListener("click", this.createPost);
+        this.createButton.addEventListener("click", function () {
+            self.createPost()
+        });
         this.getPost();
     }
 
     constructInterface.prototype.getPost = function() {
         var arr = driver.loadItem();
         for (var i = 0; i < arr.length; i++) {
-            workAtButton(arr[i]);
+            this.workAtButton(arr[i]);
         }
     };
     constructInterface.prototype.createPost = function() {
-        workAtButton();
+        this.workAtButton();
         driver.saveItems(this.posts);
     };
     constructInterface.prototype.workAtButton = function(storage) {
