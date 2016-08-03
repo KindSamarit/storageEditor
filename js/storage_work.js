@@ -6,8 +6,7 @@
             if (stor === "") {
                 return [];
             } else {
-                var arrStorage = JSON.parse(stor);
-                return arrStorage;
+                return JSON.parse(stor);
             }
         },
         saveItems: function (posts) {

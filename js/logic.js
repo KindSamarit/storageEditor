@@ -7,12 +7,11 @@
         this.content_text = document.getElementById("content_text");
         this.posts = []; // Массив постов
         this.icon = document.getElementsByClassName("icon");
-        this.createButton.addEventListener("click", createPost);
+        this.createButton.addEventListener("click", this.createPost);
         this.getPost();
     }
 
     constructInterface.prototype.getPost = function() {
-        console.log(arr);
         var arr = driver.loadItem();
         for (var i = 0; i < arr.length; i++) {
             workAtButton(arr[i]);
@@ -37,33 +36,5 @@
         this.posts.push(storage);
     };
 
-    // Объявление переменных
-
-
-
-    // Инициализация
-
-
-
-    // Объявление функций
-
-    function workAtButton(storage) {
-
-    }
-
-
-
-    function createPost() {
-
-    }
-
-        //getPost();
-
-    function getPost() {
-
-    }
-
     var test = new constructInterface();
-    test.getPost();
-
 }());
