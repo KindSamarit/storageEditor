@@ -12,11 +12,8 @@
             driver.action = "default";
         }
     function switchNameApi() {
-        driver.action = "api";
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', "http://www/api.php", true);
-        xhr.send("action=getList");
-        console.log(xhr.status);
+            driver.action = "api";
+
     }
     console.log(driver);
     strictButtonStorage.addEventListener("click", switchNameStorage);

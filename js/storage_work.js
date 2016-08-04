@@ -10,10 +10,19 @@
                     } else {
                         return [];
                 } 
-            } else {
-                    
+                } else {
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('GET', "http://www/api.php", false);
+                    xhr.onreadystatechange = function() {
+                        if (xhr.readyState != 4) return;
+                        if (xhr.status != 200) {
+                            console.log(xhr.status + " : " + xhr.statusText);
+                        } else {
+                            return xhr.responseText;
+                        }
+                    };
+                    xhr.send("?action=getList");
                 }
-            
         },
         saveItems: function (posts, prefix) {
             if (this.action === "default") {
