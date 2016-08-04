@@ -12,16 +12,17 @@
                 } 
                 } else {
                     var xhr = new XMLHttpRequest();
-                    xhr.open('GET', "http://www/api.php", true);
+                    xhr.open('GET', "http://www/api.php?action=getList", true);
                     xhr.onreadystatechange = function() {
                         if (xhr.readyState != 4) return;
                         if (xhr.status != 200) {
                             console.log(xhr.status + " : " + xhr.statusText);
                         } else {
-                            return xhr.responseText;
+                             var data = xhr.responseText;
+                            console.log(data);
                         }
                     };
-                        xhr.send("?action=getList");
+                    xhr.send();
                 }
         },
         saveItems: function (posts, prefix) {
