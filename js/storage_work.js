@@ -20,6 +20,9 @@
                         } else {
                              var data = xhr.responseText;
                             console.log(data);
+                            var apiResult = new constructInterface(document.getElementById("content_app_left"), "api");
+                            console.log(apiResult);
+                            apiResult.getPost(data);
                         }
                     };
                     xhr.send();

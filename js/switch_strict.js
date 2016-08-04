@@ -14,6 +14,7 @@
     function switchNameApi() {
             driver.action = "api";
             driver.loadItem();
+        
 
     }
     console.log(driver);
