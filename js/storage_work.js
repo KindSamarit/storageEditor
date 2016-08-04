@@ -12,7 +12,7 @@
                 } 
                 } else {
                     var xhr = new XMLHttpRequest();
-                    xhr.open('GET', "http://www/api.php", false);
+                    xhr.open('GET', "http://www/api.php", true);
                     xhr.onreadystatechange = function() {
                         if (xhr.readyState != 4) return;
                         if (xhr.status != 200) {
@@ -21,7 +21,7 @@
                             return xhr.responseText;
                         }
                     };
-                    xhr.send("?action=getList");
+                        xhr.send("?action=getList");
                 }
         },
         saveItems: function (posts, prefix) {
