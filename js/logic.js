@@ -9,7 +9,6 @@
         this.posts = []; // Массив постов
         this.icon = this.content.querySelector(".icon");
         this.createButton.addEventListener("click", this.createPost.bind(this));
-        this.getPost();
     }
 
     constructInterface.prototype.getPost = function() {
@@ -38,4 +37,5 @@
     };
 
     window.constructInterface = constructInterface;
+    
 }());

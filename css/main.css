@@ -87,6 +87,12 @@ body {
     cursor: pointer;
 }
 
+.switch_strict {
+    margin: 10px 0 0 10px;
+    height: 50px;
+    width: 100px;
+}
+
 
 
 
